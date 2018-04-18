@@ -13,9 +13,20 @@ public class Main {
 
         PC thePC = new PC(theCase, theMonitor, theMotherboard);
 
-        thePC.getMonitor().drawPixelAt(1500,1200,"red");
-        thePC.getMotherboard().loadProgram("windows 98");
-        thePC.getTheCase().pressPowerButton();
+        thePC.powerUp();
 
+        System.out.println("************************");
+
+        Dimensions bedDimensions = new Dimensions(100, 50, 200);
+        Dimensions tableDimensions = new Dimensions(250, 80, 100);
+
+        Bed bed = new Bed(bedDimensions, "wood", true);
+        Chair chair = new Chair("steel");
+        Table table = new Table(tableDimensions, "brown", "wood");
+
+        Room room = new Room(table, bed, chair);
+
+        room.roomCoposition();
+        room.getBed().bedDetails();
     }
 }
