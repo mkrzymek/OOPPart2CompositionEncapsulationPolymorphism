@@ -4,6 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        composition();
+        encapsulation();
+    }
+
+    public static void composition() {
         Dimensions dimensions = new Dimensions(20,20,5);
         Case theCase = new Case("220B", "Dell", "240", dimensions);
 
@@ -28,5 +33,28 @@ public class Main {
 
         room.roomCoposition();
         room.getBed().bedDetails();
+    }
+
+    public static void encapsulation() {
+
+//        Player player = new Player();
+//        player.name = "Tim";
+//        player.health = 20;
+//        player.weapon = "AK47";
+//
+//        int damage = 10;
+//        player.loseHealth(damage);
+//        System.out.println("remaining hp = " + player.healthRemaining());
+//
+//        damage = 11;
+//        player.health = 100;
+//        player.loseHealth(damage);
+//        System.out.println("remaining hp = " + player.healthRemaining());
+
+        EnhancedPlayer player = new EnhancedPlayer("Tim", 50, "AK47");
+        System.out.println("initial hp is " + player.getHealth());
+
+
+
     }
 }
